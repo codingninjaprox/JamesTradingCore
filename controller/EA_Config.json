@@ -1,0 +1,33 @@
+{
+  "tradingSettings": {
+    "newsFilterEnabled": true,
+    "newsFilterMinutes": 30,
+    "volatilityFilterEnabled": true,
+    "minVolatility": 0.5,
+    "maxVolatility": 5.0
+  },
+  "exitLogic": {
+    "enableBreakEven": true,
+    "breakEvenPips": 10.0,
+    "enablePartialClose": false,
+    "partialClosePercent": 50.0,
+    "partialCloseTarget": 20.0
+  },
+  "templateSettings": {
+    "autoApplyTemplate": true,
+    "chartTemplate": "JamesTrading_Default.tpl",
+    "defaultTimeframe": "H4"
+  },
+  "performanceTracking": {
+    "enableAnalytics": true,
+    "reportInterval": 3600,
+    "trackLargestWins": true,
+    "trackLargestLosses": true
+  },
+  "riskManagement": {
+    "maxOpenOrders": 10,
+    "maxByCurrencyPrefix_EUR": 2,
+    "maxByCurrencyPrefix_GBP": 2,
+    "maxByCurrencyPrefix_USD": 3
+  }
+} 

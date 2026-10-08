@@ -1,0 +1,110 @@
+@echo off
+ECHO Creating 50 user accounts for MT4 terminal management (Extended Capacity)...
+
+:: Create 50 users with same password for consistency
+net user MT4User1 P@ssw0rd123! /add
+net user MT4User2 P@ssw0rd123! /add
+net user MT4User3 P@ssw0rd123! /add
+net user MT4User4 P@ssw0rd123! /add
+net user MT4User5 P@ssw0rd123! /add
+net user MT4User6 P@ssw0rd123! /add
+net user MT4User7 P@ssw0rd123! /add
+net user MT4User8 P@ssw0rd123! /add
+net user MT4User9 P@ssw0rd123! /add
+net user MT4User10 P@ssw0rd123! /add
+net user MT4User11 P@ssw0rd123! /add
+net user MT4User12 P@ssw0rd123! /add
+net user MT4User13 P@ssw0rd123! /add
+net user MT4User14 P@ssw0rd123! /add
+net user MT4User15 P@ssw0rd123! /add
+net user MT4User16 P@ssw0rd123! /add
+net user MT4User17 P@ssw0rd123! /add
+net user MT4User18 P@ssw0rd123! /add
+net user MT4User19 P@ssw0rd123! /add
+net user MT4User20 P@ssw0rd123! /add
+net user MT4User21 P@ssw0rd123! /add
+net user MT4User22 P@ssw0rd123! /add
+net user MT4User23 P@ssw0rd123! /add
+net user MT4User24 P@ssw0rd123! /add
+net user MT4User25 P@ssw0rd123! /add
+net user MT4User26 P@ssw0rd123! /add
+net user MT4User27 P@ssw0rd123! /add
+net user MT4User28 P@ssw0rd123! /add
+net user MT4User29 P@ssw0rd123! /add
+net user MT4User30 P@ssw0rd123! /add
+net user MT4User31 P@ssw0rd123! /add
+net user MT4User32 P@ssw0rd123! /add
+net user MT4User33 P@ssw0rd123! /add
+net user MT4User34 P@ssw0rd123! /add
+net user MT4User35 P@ssw0rd123! /add
+net user MT4User36 P@ssw0rd123! /add
+net user MT4User37 P@ssw0rd123! /add
+net user MT4User38 P@ssw0rd123! /add
+net user MT4User39 P@ssw0rd123! /add
+net user MT4User40 P@ssw0rd123! /add
+net user MT4User41 P@ssw0rd123! /add
+net user MT4User42 P@ssw0rd123! /add
+net user MT4User43 P@ssw0rd123! /add
+net user MT4User44 P@ssw0rd123! /add
+net user MT4User45 P@ssw0rd123! /add
+net user MT4User46 P@ssw0rd123! /add
+net user MT4User47 P@ssw0rd123! /add
+net user MT4User48 P@ssw0rd123! /add
+net user MT4User49 P@ssw0rd123! /add
+net user MT4User50 P@ssw0rd123! /add
+
+:: Add users to Administrators group (required for PsExec compatibility)
+net localgroup Administrators MT4User1 /add
+net localgroup Administrators MT4User2 /add
+net localgroup Administrators MT4User3 /add
+net localgroup Administrators MT4User4 /add
+net localgroup Administrators MT4User5 /add
+net localgroup Administrators MT4User6 /add
+net localgroup Administrators MT4User7 /add
+net localgroup Administrators MT4User8 /add
+net localgroup Administrators MT4User9 /add
+net localgroup Administrators MT4User10 /add
+net localgroup Administrators MT4User11 /add
+net localgroup Administrators MT4User12 /add
+net localgroup Administrators MT4User13 /add
+net localgroup Administrators MT4User14 /add
+net localgroup Administrators MT4User15 /add
+net localgroup Administrators MT4User16 /add
+net localgroup Administrators MT4User17 /add
+net localgroup Administrators MT4User18 /add
+net localgroup Administrators MT4User19 /add
+net localgroup Administrators MT4User20 /add
+net localgroup Administrators MT4User21 /add
+net localgroup Administrators MT4User22 /add
+net localgroup Administrators MT4User23 /add
+net localgroup Administrators MT4User24 /add
+net localgroup Administrators MT4User25 /add
+net localgroup Administrators MT4User26 /add
+net localgroup Administrators MT4User27 /add
+net localgroup Administrators MT4User28 /add
+net localgroup Administrators MT4User29 /add
+net localgroup Administrators MT4User30 /add
+net localgroup Administrators MT4User31 /add
+net localgroup Administrators MT4User32 /add
+net localgroup Administrators MT4User33 /add
+net localgroup Administrators MT4User34 /add
+net localgroup Administrators MT4User35 /add
+net localgroup Administrators MT4User36 /add
+net localgroup Administrators MT4User37 /add
+net localgroup Administrators MT4User38 /add
+net localgroup Administrators MT4User39 /add
+net localgroup Administrators MT4User40 /add
+net localgroup Administrators MT4User41 /add
+net localgroup Administrators MT4User42 /add
+net localgroup Administrators MT4User43 /add
+net localgroup Administrators MT4User44 /add
+net localgroup Administrators MT4User45 /add
+net localgroup Administrators MT4User46 /add
+net localgroup Administrators MT4User47 /add
+net localgroup Administrators MT4User48 /add
+net localgroup Administrators MT4User49 /add
+net localgroup Administrators MT4User50 /add
+
+ECHO All 50 user accounts created and added to Administrators group.
+ECHO This will support up to 150 terminals (3 per user) with proper load balancing.
+pause 

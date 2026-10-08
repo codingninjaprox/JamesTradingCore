@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instinct Center</title>
+  <!-- Uses only web-safe fonts so the downloaded HTML renders consistently -->
+  <style>
+    :root {
+      --bg: #f4f0e8;
+      --surface: #f8f5ee;
+      --surface-2: #efe7da;
+      --card: #fffdfa;
+      --text: #1f1812;
+      --muted: #6f6258;
+      --line: #dccfbe;
+      --primary: #0b1f3a;
+      --primary-dark: #07162a;
+      --accent: #1e3a5f;
+      --gold: #c4a46a;
+      --shadow: 0 16px 40px rgba(45, 27, 17, 0.10);
+      --max: 1400px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f6f1e8 0%, #f2ece1 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary); /* deep navy */
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 22px rgba(10, 20, 40, 0.25);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff7ef;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-size: 18px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #b54d2f, #7d241a);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: rgba(255,247,239,0.88);
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 180ms ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border-color: rgba(0,0,0,0.08);
+      box-shadow: 0 10px 24px rgba(10, 20, 40, 0.25);
+    }
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    .btn-secondary {
+      background: #fff9f2;
+      color: var(--primary);
+      border-color: var(--line);
+    }
+    .btn-secondary:hover { background: #f5eee4; }
+
+    .hero {
+      padding: 40px 0 72px;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f0e6d8;
+      border: 1px solid var(--line);
+      color: var(--primary);
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #231913;
+    }
+
+    .hero-rotating {
+      min-height: 1.2em;
+      display: flex;
+      align-items: center;
+    }
+
+    #hero-rotating-text {
+      display: inline-block;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #hero-rotating-text.fade-out {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .hero-sub {
+      margin: 18px 0 22px;
+      font-size: 19px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    .benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 26px;
+      display: grid;
+      gap: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      color: #3b2d24;
+    }
+
+    .check {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #f0e6d8;
+      color: var(--primary);
+      font-weight: 800;
+      flex: 0 0 26px;
+      margin-top: 1px;
+      border: 1px solid var(--line);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .trust {
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .mini-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .proof-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fbf7f1;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
+
+    .video-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .video-frame {
+      position: relative;
+      min-height: 330px;
+      border-radius: 18px;
+      overflow: hidden;
+      padding: 24px;
+      display: flex;
+      align-items: flex-end;
+      background:
+        radial-gradient(circle at top right, rgba(196,164,106,0.22), transparent 28%),
+        linear-gradient(135deg, #0b1f3a, #1e3a5f 60%, #6fd0ea);
+    }
+
+    .play {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,250,244,0.95);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+    }
+
+    .play:before {
+      content: "";
+      margin-left: 4px;
+      border-left: 18px solid var(--primary);
+      border-top: 11px solid transparent;
+      border-bottom: 11px solid transparent;
+    }
+
+    .video-copy {
+      color: #fff9f2;
+      max-width: 32ch;
+    }
+
+    .video-copy p {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      opacity: 0.9;
+    }
+
+    .video-copy h3 {
+      margin: 10px 0 0;
+      font-size: 30px;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+
+    .video-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 14px;
+      padding: 14px;
+      background: #fff9f2;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .video-meta span {
+      color: var(--muted);
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .section {
+      padding: 0 0 76px;
+    }
+
+    .section-accent {
+      margin-bottom: 40px;
+      background: linear-gradient(180deg, #6fd0ea 0%, #8edcf1 100%);
+      padding: 48px 0 88px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle right-side meaning background (flow arrows) */
+    .section-accent::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 58%;
+      height: 100%;
+      pointer-events: none;
+      /* white-based arrow pattern */
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.95) 100%),
+        repeating-linear-gradient(
+          135deg,
+          #ffffff 0px,
+          #ffffff 6px,
+          rgba(255,255,255,0.7) 6px,
+          rgba(255,255,255,0.7) 18px
+        );
+      mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.9) 28%, #000 100%);
+      opacity: 0.9;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -0.03em;
+      color: #231913;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 60ch;
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .grid-4 {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: stretch;
+      position: relative;
+    }
+
+    .card-flow {
+      position: relative;
+    }
+
+    
+
+    
+
+    .card {
+      transform: rotate(-1deg);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 20px 44px rgba(45, 27, 17, 0.12);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .step-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: #f7efe2;
+      color: var(--primary);
+      flex: 0 0 72px;
+    }
+
+    .step-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .step-num {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      font-size: 100px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      opacity: 0.12;
+      margin-top: -8px;
+      user-select: none;
+    }
+
+    /* Step colors for flow */
+    .card:nth-child(1) { transform: none; }
+    .card:nth-child(2) { transform: none; }
+    .card:nth-child(3) { transform: none; }
+    .card:nth-child(4) { transform: none; }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 22px 46px rgba(45, 27, 17, 0.14),
+        0 0 0 1px rgba(255,255,255,0.9),
+        0 0 24px rgba(255,255,255,0.28);
+    }
+
+    .card:nth-child(1) .step-icon { background: #dff5fb; color: #2a97b8; }
+    .card:nth-child(2) .step-icon { background: #d7eef5; color: #317f98; }
+    .card:nth-child(3) .step-icon { background: #dbe5f2; color: #1e3a5f; }
+    .card:nth-child(4) .step-icon { background: #d7e0ee; color: #0b1f3a; }
+
+    .card:nth-child(1) .step-num { color: #6fd0ea; }
+    .card:nth-child(2) .step-num { color: #4aa3c0; }
+    .card:nth-child(3) .step-num { color: #1e3a5f; }
+    .card:nth-child(4) .step-num { color: #0b1f3a; }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      
+      z-index: 0;
+      border-radius: 24px;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.74) 100%);
+      opacity: 0;
+      z-index: 0;
+      border-radius: 24px;
+    }
+
+    .card:hover::before {
+      opacity: 0.42;
+    }
+
+    .card:hover::after {
+      opacity: 1;
+    }
+
+    .card:nth-child(1)::before {
+      /* pause / calm */
+      background-image: url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1200&auto=format&fit=crop');
+    }
+
+    .card:nth-child(2)::before {
+      /* recognizing pattern / reflection */
+      background-image: url('https://images.unsplash.com/photo-1493836512294-502baa1986e2?q=80&w=1200&auto=format&fit=crop');
+    }
+
+    .card:nth-child(3)::before {
+      /* understanding / thinking */
+      background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop');
+    }
+
+    .card:nth-child(4)::before {
+      /* guidance / support / meeting */
+      background-image: url('https://images.unsplash.com/photo-1551836022-deb4988cc6c0?q=80&w=1200&auto=format&fit=crop');
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card:hover .step-icon {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 10px 22px rgba(11,31,58,0.12);
+    }
+
+    .card:hover .step-num {
+      opacity: 0.18;
+    }
+
+    .card:hover .btn {
+      transform: translateY(-1px);
+    }
+
+    .step-icon,
+    .step-num,
+    .btn {
+      transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      color: #281d16;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+    }
+
+    .community-section {
+      padding: 80px 0 76px;
+      margin-top: 40px;
+    }
+
+    .community-band {
+      position: relative;
+      background: linear-gradient(135deg, #0b1f3a 0%, #1e3a5f 60%, #6fd0ea 100%);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: center;
+      color: #fff7ef;
+      overflow: hidden;
+    }
+
+    /* real meeting/community background */
+    .community-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    /* dark overlay for readability */
+    .community-band::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(11,31,58,0.92) 0%, rgba(30,58,95,0.88) 60%, rgba(111,208,234,0.6) 100%);
+      z-index: 0;
+    }
+
+    .community-band > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .community-band h2 {
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -0.03em;
+      color: #fff9f2;
+    }
+
+    .community-band p {
+      margin: 0;
+      color: rgba(255,249,242,0.9);
+      line-height: 1.75;
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 58ch;
+    }
+
+    .community-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .community-points div {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #fff7ef;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .community-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
+      flex: 0 0 22px;
+      margin-top: 1px;
+      font-size: 12px;
+    }
+
+    .community-panel {
+      background: rgba(255,249,242,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 22px;
+      backdrop-filter: blur(2px);
+    }
+
+    .community-panel .label {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff9f2;
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .community-panel h3 {
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      color: #fff9f2;
+    }
+
+    .community-panel p {
+      margin: 0 0 18px;
+      color: rgba(255,249,242,0.9);
+      font-size: 15px;
+      line-height: 1.75;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .community-note {
+      margin-top: 12px;
+      color: rgba(255,249,242,0.86);
+      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .university-section {
+      padding: 0 0 76px;
+    }
+
+    .university-card {
+      position: relative;
+      background: #fbf7f1;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* graduation image background with fade */
+    .university-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.35;
+      z-index: 0;
+    }
+
+    /* soft overlay to keep text readable */
+    .university-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(251,247,241,0.85) 0%, rgba(251,247,241,0.7) 40%, rgba(251,247,241,0.4) 100%);
+      z-index: 0;
+    }
+
+    .university-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .university-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 58ch;
+    }
+
+    .university-panel {
+      background: linear-gradient(135deg, #f0e6d8, #fbf7f1);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .university-panel h3 {
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px;
+      color: #281d16;
+    }
+
+    .university-panel p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .footer {
+      padding: 0 0 40px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .flow-arrow { display: none; }
+      .hero-card, .grid-4, .community-band, .university-card { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .section-head { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 24px; }
+      .hero-card, .card, .video-card { padding: 18px; }
+      .hero-actions, .nav-actions { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .nav-actions .btn-secondary { display: none; }
+      .video-meta { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <span class="brand-mark">IC</span>
+        <span>Instinct Center</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#quick-start">Quick Start</a>
+        <a href="/meetings/">Meetings</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="/meetings/">Meetings</a>
+        <a class="btn btn-primary" href="#quick-start">Start Here</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-card">
+        <div>
+          <div class="eyebrow">Transform addiction & emotions</div>
+          <h1 class="hero-rotating" style="color:#c92b2b;">
+            <span id="hero-rotating-text">MISPLACED ANGER ?</span>
+          </h1>
+          <p class="hero-sub">
+            It is not your fault. Your brain’s primitive survival system can take over and drive reactions you later regret. This approach helps you understand that pattern and respond differently.
+          </p>
+
+          <ul class="benefits">
+            <li><span class="check">✓</span><span>See why the same emotional and behavioral loops keep repeating.</span></li>
+            <li><span class="check">✓</span><span>Learn the Instinctual Core in a simple, practical way.</span></li>
+            <li><span class="check">✓</span><span>Start with one guided path instead of searching through everything alone.</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#quick-start">Start here</a>
+            <a class="btn btn-secondary" href="/meetings/">Talk in a meeting</a>
+          </div>
+
+          <div class="trust">A calm first step for people ready to understand what is happening beneath the surface.</div>
+
+          <div class="mini-proof">
+            <span class="proof-pill">Addiction</span>
+            <span class="proof-pill">Emotional triggers</span>
+            <span class="proof-pill">Habit change</span>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-frame">
+            <div class="play"></div>
+            <div class="video-copy">
+              <p>Featured introduction</p>
+              <h3>See how your reactions are driven and how you can start changing them today.</h3>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="section-accent" id="quick-start">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>IC Solution Quick Start Guide</h2>
+            <p>If you feel stuck in the same patterns and reacting in ways you regret, repeating habits you want to stop, or feeling overwhelmed by emotions you can’t control and start here. This guide helps you understand what’s actually happening and what you can do next.</p>
+          </div>
+          
+        </div>
+
+        <div class="grid-4">
+          <article class="card card-flow">
+            <div class="step-top">
+              <div class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3v6"></path><path d="M12 21v-2"></path><path d="M4.93 4.93l4.24 4.24"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4 12a8 8 0 1 0 8-8"></path></svg>
+              </div>
+              <div class="step-num">1</div>
+            </div>
+            <h3>Pause the reaction</h3>
+            <p>In the moment, it can feel automatic and like something takes over before you can think. This step helps you create just enough space to interrupt that pattern.</p>
+            <div style="margin-top:auto; padding-top:16px;"><a class="btn btn-secondary" href="/posts/">Learn how to pause</a></div>
+            
+          </article>
+
+          <article class="card card-flow">
+            <div class="step-top">
+              <div class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path><path d="M11 8v3l2 2"></path></svg>
+              </div>
+              <div class="step-num">2</div>
+            </div>
+            <h3>Recognize the pattern</h3>
+            <p>You may notice the same cycle: a trigger → a strong urge or emotion → a reaction you later regret. Seeing this clearly is the first real shift.</p>
+            <div style="margin-top:auto; padding-top:16px;"><a class="btn btn-secondary" href="/posts/">See real examples</a></div>
+            
+          </article>
+
+          <article class="card card-flow">
+            <div class="step-top">
+              <div class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3c4.5 0 8 3.5 8 8 0 5.5-8 10-8 10S4 16.5 4 11c0-4.5 3.5-8 8-8Z"></path><path d="M12 8a3 3 0 1 0 0 6"></path></svg>
+              </div>
+              <div class="step-num">3</div>
+            </div>
+            <h3>Understand what’s driving it</h3>
+            <p>It’s not just willpower. A fast, survival-based system can override your intention. Understanding this changes how you respond.</p>
+            <div style="margin-top:auto; padding-top:16px;"><a class="btn btn-secondary" href="/posts/">Understand the IC</a></div>
+            
+          </article>
+
+          <article class="card card-flow">
+            <div class="step-top">
+              <div class="step-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path><path d="M5 6v12"></path></svg>
+              </div>
+              <div class="step-num">4</div>
+            </div>
+            <h3>Choose a better next step</h3>
+            <p>Instead of repeating the same loop, take a guided next step and often this is where a conversation in a meeting helps you apply this to your situation.</p>
+            <div style="margin-top:auto; padding-top:16px;"><a class="btn btn-primary" href="/meetings/">Get guidance in a meeting</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="community-section" id="community">
+      <div class="container">
+        <div class="community-band">
+          <div>
+            <div class="eyebrow" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.18); color: #fff9f2;">Join a community built around change</div>
+            <h2>You can start with a free meeting and real guidance.</h2>
+            <p>
+              You do not have to figure this out alone. Join a free meeting, learn from experienced guidance, and begin understanding your pattern in a space built for support, clarity, and change.
+            </p>
+            <div class="community-points">
+              <div><span class="community-dot">✓</span><span>Free meetings available right now for people who want support and direction.</span></div>
+              <div><span class="community-dot">✓</span><span>Get advice and insight from professionals who understand these patterns deeply.</span></div>
+              <div><span class="community-dot">✓</span><span>Take a first step without pressure and see whether this approach feels right for you.</span></div>
+            </div>
+          </div>
+
+          <div class="community-panel">
+            <div class="label">Free support</div>
+            <h3>Book your free meeting</h3>
+            <p>
+              Meet with the team, ask questions, and get clearer about what you are experiencing and what to do next.
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:12px;">
+              <a class="btn btn-secondary" href="/meetings/" style="background:#fff9f2; color:var(--primary);">Join a Free Meeting</a>
+              
+            </div>
+            <div class="community-note">Currently free to join.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="university-section" id="university">
+      <div class="container">
+        <div class="university-card">
+          <div class="university-copy">
+            <div class="eyebrow">Go deeper when you’re ready</div>
+            <h2 style="margin:0 0 10px; font-size:clamp(30px,4vw,42px); letter-spacing:-0.03em; color:#231913;">Explore the full Instinctual Core framework in depth.</h2>
+            <p>
+              For people who want a deeper understanding, the 4-hour University offers a more complete look at the framework, the patterns behind survival-driven behavior, and how lasting change develops over time.
+            </p>
+          </div>
+
+          <div class="university-panel">
+            <h3>4-Hour University</h3>
+            <p>A deeper learning experience for visitors who want to go beyond the introduction and study the full method more closely.</p>
+            <a class="btn btn-primary" href="/university/">Explore Deep Training</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Instinct Center</div>
+  </footer>
+  <script>
+    (function () {
+      const words = [
+        "ADDICTION ?",
+        "ANXIETY ?",
+        "ALCOHOLISM ?",
+        "DEPRESSION ?",
+        "CHRONIC STRESS ?",
+        "BAD HABITS ?",
+        "PANIC ATTACKS ?",
+        "SELF-DOUBT ?",
+        "MISPLACED ANGER ?",
+        "SELF-LOATHING ?",
+        "PROCRASTINATION ?",
+        "INTERNAL STRUGGLES?"
+      ];
+
+      const el = document.getElementById('hero-rotating-text');
+      if (!el) return;
+
+      let index = words.indexOf('MISPLACED ANGER ?');
+      if (index === -1) index = 0;
+
+      setInterval(() => {
+        el.classList.add('fade-out');
+        setTimeout(() => {
+          index = (index + 1) % words.length;
+          el.textContent = words[index];
+          el.classList.remove('fade-out');
+        }, 450);
+      }, 2600);
+    })();
+  </script>
+</body>
+</html>

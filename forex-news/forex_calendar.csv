@@ -1,0 +1,102 @@
+Date,Time,Currency,Impact,Event,Actual,Forecast,Previous
+Mon Sep 15,12:30am,NZD,Low,BusinessNZ Services Index,47.5,,48.9
+Mon Sep 15,All Day,JPY,Non-Economic,Bank Holiday,,,
+Mon Sep 15,1:01am,GBP,Low,Rightmove HPI m/m,0.4%,,-1.3%
+Mon Sep 15,3:30am,CNY,Low,New Home Prices m/m,-0.30%,,-0.31%
+Mon Sep 15,4:00am,CNY,Medium,Industrial Production y/y,5.2%,5.7%,5.7%
+Mon Sep 15,,CNY,Medium,Retail Sales y/y,3.4%,3.8%,3.7%
+Mon Sep 15,,CNY,Low,Fixed Asset Investment ytd/y,0.5%,1.5%,1.6%
+Mon Sep 15,,CNY,Low,NBS Press Conference,,,
+Mon Sep 15,,CNY,Low,Unemployment Rate,5.3%,5.2%,5.2%
+Mon Sep 15,8:00am,EUR,Low,German WPI m/m,-0.6%,0.2%,-0.1%
+Mon Sep 15,8:30am,CHF,Low,PPI m/m,-0.6%,0.1%,-0.2%
+Mon Sep 15,10:00am,EUR,Low,Italian Trade Balance,7.91B,5.50B,5.38B
+Mon Sep 15,11:00am,EUR,Low,Trade Balance,5.3B,11.7B,3.7B
+Mon Sep 15,2:30pm,CAD,Low,Manufacturing Sales m/m,2.5%,1.7%,0.3%
+Mon Sep 15,,CAD,Low,Wholesale Sales m/m,1.2%,1.4%,1.0%
+Mon Sep 15,,USD,Medium,Empire State Manufacturing Index,-8.7,4.3,11.9
+Mon Sep 15,8:30pm,EUR,Medium,ECB President Lagarde Speaks,,,
+Tue Sep 16,12:45am,NZD,Low,FPI m/m,,,0.7%
+Tue Sep 16,1:50am,AUD,Low,RBA Assist Gov Hunter Speaks,,,
+Tue Sep 16,6:30am,JPY,Low,Tertiary Industry Activity m/m,,0.1%,0.5%
+Tue Sep 16,8:00am,GBP,Medium,Average Earnings Index 3m/y,,4.7%,4.6%
+Tue Sep 16,,GBP,Medium,Claimant Count Change,,20.3K,-6.2K
+Tue Sep 16,,GBP,Low,Unemployment Rate,,4.7%,4.7%
+Tue Sep 16,11:00am,EUR,Medium,German ZEW Economic Sentiment,,26.4,34.7
+Tue Sep 16,,EUR,Low,Industrial Production m/m,,0.3%,-1.3%
+Tue Sep 16,,EUR,Low,ZEW Economic Sentiment,,20.3,25.1
+Tue Sep 16,2:15pm,CAD,Low,Housing Starts,,278K,294K
+Tue Sep 16,2:30pm,CAD,High,CPI m/m,,0.1%,0.3%
+Tue Sep 16,,CAD,High,Median CPI y/y,,3.1%,3.1%
+Tue Sep 16,,CAD,High,Trimmed CPI y/y,,3.0%,3.0%
+Tue Sep 16,,CAD,Medium,Common CPI y/y,,2.6%,2.6%
+Tue Sep 16,,CAD,Low,Core CPI m/m,,,0.1%
+Tue Sep 16,,USD,High,Core Retail Sales m/m,,0.4%,0.3%
+Tue Sep 16,,USD,High,Retail Sales m/m,,0.2%,0.5%
+Tue Sep 16,,USD,Low,Import Prices m/m,,-0.2%,0.4%
+Tue Sep 16,3:15pm,USD,Low,Capacity Utilization Rate,,77.4%,77.5%
+Tue Sep 16,,USD,Low,Industrial Production m/m,,-0.1%,-0.1%
+Tue Sep 16,4:00pm,USD,Low,Business Inventories m/m,,0.2%,0.2%
+Tue Sep 16,,USD,Low,NAHB Housing Market Index,,33,32
+Tue Sep 16,4:30pm,AUD,Low,CB Leading Index m/m,,,0.5%
+Tue Sep 16,Tentative,NZD,Low,GDT Price Index,,,-4.3%
+Tue Sep 16,10:30pm,USD,Low,API Weekly Statistical Bulletin,,,
+Tue Sep 16,11:00pm,NZD,Low,Westpac Consumer Sentiment,,,91.2
+Wed Sep 17,12:45am,NZD,Low,Current Account,,-2.67B,-2.32B
+Wed Sep 17,1:50am,JPY,Low,Trade Balance,,-0.36T,-0.30T
+Wed Sep 17,2:30am,AUD,Low,MI Leading Index m/m,,,0.1%
+Wed Sep 17,3:30am,AUD,Low,RBA Assist Gov Jones Speaks,,,
+Wed Sep 17,8:00am,GBP,High,CPI y/y,,3.8%,3.8%
+Wed Sep 17,,GBP,Low,Core CPI y/y,,3.7%,3.8%
+Wed Sep 17,,GBP,Low,RPI y/y,,4.7%,4.8%
+Wed Sep 17,9:00am,CHF,Low,SECO Economic Forecasts,,,
+Wed Sep 17,9:30am,EUR,Medium,ECB President Lagarde Speaks,,,
+Wed Sep 17,10:30am,GBP,Low,HPI y/y,,3.6%,3.7%
+Wed Sep 17,11:00am,EUR,Low,Final Core CPI y/y,,2.3%,2.3%
+Wed Sep 17,,EUR,Low,Final CPI y/y,,2.1%,2.1%
+Wed Sep 17,Tentative,EUR,Low,German 30-y Bond Auction,,,3.28|1.0
+Wed Sep 17,2:30pm,CAD,Low,Foreign Securities Purchases,,,0.71B
+Wed Sep 17,,USD,Low,Building Permits,,1.37M,1.35M
+Wed Sep 17,,USD,Low,Housing Starts,,1.36M,1.43M
+Wed Sep 17,3:45pm,CAD,High,BOC Rate Statement,,,
+Wed Sep 17,,CAD,High,Overnight Rate,,2.50%,2.75%
+Wed Sep 17,4:30pm,CAD,High,BOC Press Conference,,,
+Wed Sep 17,,USD,Low,Crude Oil Inventories,,,3.9M
+Wed Sep 17,7:00pm,EUR,Low,German Buba President Nagel Speaks,,,
+Wed Sep 17,8:00pm,USD,High,Federal Funds Rate,,4.25%,4.50%
+Wed Sep 17,,USD,High,FOMC Economic Projections,,,
+Wed Sep 17,,USD,High,FOMC Statement,,,
+Wed Sep 17,8:30pm,USD,High,FOMC Press Conference,,,
+Thu Sep 18,12:45am,NZD,High,GDP q/q,,-0.3%,0.8%
+Thu Sep 18,1:50am,JPY,Low,Core Machinery Orders m/m,,-1.7%,3.0%
+Thu Sep 18,3:30am,AUD,High,Employment Change,,21.2K,24.5K
+Thu Sep 18,,AUD,High,Unemployment Rate,,4.2%,4.2%
+Thu Sep 18,8:00am,CHF,Low,Trade Balance,,5.22B,4.59B
+Thu Sep 18,Tentative,CNY,Low,Foreign Direct Investment ytd/y,,,
+Thu Sep 18,9:10am,EUR,Low,ECB President Lagarde Speaks,,,
+Thu Sep 18,10:00am,EUR,Low,Current Account,,,35.8B
+Thu Sep 18,Tentative,EUR,Low,Spanish 10-y Bond Auction,,,
+Thu Sep 18,12:00pm,EUR,Low,German Buba Monthly Report,,,
+Thu Sep 18,1:00pm,GBP,High,Monetary Policy Summary,,,
+Thu Sep 18,,GBP,High,MPC Official Bank Rate Votes,,0-1-8,0-5-4
+Thu Sep 18,,GBP,High,Official Bank Rate,,4.00%,4.00%
+Thu Sep 18,2:30pm,USD,High,Unemployment Claims,,245K,263K
+Thu Sep 18,,USD,Medium,Philly Fed Manufacturing Index,,1.4,-0.3
+Thu Sep 18,4:00pm,EUR,Low,German Buba President Nagel Speaks,,,
+Thu Sep 18,,USD,Low,CB Leading Index m/m,,-0.1%,-0.1%
+Thu Sep 18,4:30pm,USD,Low,Natural Gas Storage,,,71B
+Thu Sep 18,10:00pm,USD,Low,TIC Long-Term Purchases,,,150.8B
+Fri Sep 19,12:45am,NZD,Low,Trade Balance,,,-578M
+Fri Sep 19,1:01am,GBP,Low,GfK Consumer Confidence,,-18,-17
+Fri Sep 19,1:30am,JPY,Low,National Core CPI y/y,,2.7%,3.1%
+Fri Sep 19,Tentative,JPY,High,BOJ Policy Rate,,<0.50%,<0.50%
+Fri Sep 19,Tentative,JPY,High,Monetary Policy Statement,,,
+Fri Sep 19,5:00am,NZD,Low,Credit Card Spending y/y,,,1.4%
+Fri Sep 19,Tentative,JPY,High,BOJ Press Conference,,,
+Fri Sep 19,8:00am,EUR,Low,German PPI m/m,,-0.1%,-0.1%
+Fri Sep 19,,GBP,Medium,Retail Sales m/m,,0.4%,0.6%
+Fri Sep 19,,GBP,Low,Public Sector Net Borrowing,,12.5B,1.1B
+Fri Sep 19,All Day,EUR,Low,Eurogroup Meetings,,,
+Fri Sep 19,2:30pm,CAD,Medium,Core Retail Sales m/m,,0.3%,1.9%
+Fri Sep 19,,CAD,Medium,Retail Sales m/m,,-0.6%,1.5%
+Sat Sep 20,All Day,EUR,Low,ECOFIN Meetings,,,
